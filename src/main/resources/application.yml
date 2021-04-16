@@ -1,0 +1,42 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.102.213.131:3307/ebookdb?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+  mvc:
+    static-path-pattern: /**
+  #转换时间格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+ #thymelea模板配置
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+    enabled: true
+    servlet:
+      content-type: text/html
+
+  devtools:
+    restart:
+      enabled: true
+
+mybatis:
+  #实体类包
+  type-aliases-package: com.su.pojo
+  #配置mapping路径
+  mapper-locations: classpath:mapper/*.xml
+
+#配置日志文件
+logging:
+  config: classpath:log4j2.xml
+
+
+
+
